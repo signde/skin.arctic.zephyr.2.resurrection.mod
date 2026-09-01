@@ -6,9 +6,10 @@
     <controls>
 
         <control type="group">
+            <animation effect="slide" end="0,-100" time="0" condition="!Skin.HasSetting(ExtendedNotification) + Window.IsVisible(fullscreenvideo) + !String.IsEmpty(Window(10151).Property(activeareastartup))">Conditional</animation>
             <visible>!Window.IsVisible(DialogBusy.xml)</visible>
             <visible>!Window.IsVisible(DialogNotification.xml)</visible>
-            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <visible>[!Window.IsVisible(fullscreenvideo) | !String.IsEmpty(Window(10151).Property(activeareastartup))]</visible>
             <visible>!Window.IsVisible(visualisation)</visible>
             <visible>!Window.IsVisible(Startup.xml)</visible>
             <visible>!Window.IsVisible(Home.xml) | Skin.HasSetting(HomeMulti) | Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Control.HasFocus(5610) | String.IsEqual(Window(Home).Property(WidgetFocus),5610)</visible>
@@ -22,7 +23,7 @@
         <control type="group">
             <visible>!Window.IsVisible(DialogBusy.xml)</visible>
             <visible>!Window.IsVisible(DialogNotification.xml)</visible>
-            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <visible>[!Window.IsVisible(fullscreenvideo) | !String.IsEmpty(Window(10151).Property(activeareastartup))]</visible>
             <visible>!Window.IsVisible(visualisation)</visible>
             <visible>!Window.IsVisible(Startup.xml)</visible>
             <visible>Window.IsActive(Home.xml) + !Skin.HasSetting(HomeMulti) + ![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Control.HasFocus(5610) | String.IsEqual(Window(Home).Property(WidgetFocus),5610)]</visible>
