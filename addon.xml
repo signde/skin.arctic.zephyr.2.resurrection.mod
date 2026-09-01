@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.arctic.zephyr.2.resurrection.mod" name="Arctic: Zephyr 2 - Resurrection" provider-name="jurialmunkey, pkscout, heppen" version="1.0.52">
+<addon id="skin.arctic.zephyr.2.resurrection.mod" name="Arctic: Zephyr 2 - Resurrection (avdvplus/p3i)" provider-name="jurialmunkey, pkscout, heppen, jamal2362" version="68.1.0.52">
     <requires>
         <import addon="xbmc.gui" version="5.17.0" />
         <import addon="script.skinshortcuts"/>
         <import addon="script.skinhelper" version="0.0.4" />
         <import addon="script.skinvariables" version="2.1.28" />
-        <import addon="plugin.video.themoviedb.helper" version="5.5.11" />
+        <import addon="plugin.video.themoviedb.helper" version="6.16.0" />
         <import addon="resource.images.studios.white"/>
         <import addon="resource.images.moviegenreicons.transparent"/>
         <import addon="resource.images.weathericons.white"/>
         <import addon="resource.images.moviecountryicons.maps"/>
+        <import addon="script.signde.tinyppi" version="10.2.7.3" />
     </requires>
     <extension point="xbmc.gui.skin" debugging="false" defaultthemename="Textures.xbt" effectslowdown="1">
         <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
@@ -50,5 +51,22 @@
             <screenshot>resources/screenshot-05.jpg</screenshot>
             <screenshot>resources/screenshot-06.jpg</screenshot>
         </assets>
+        <news>
+            [I][COLOR FFFF9800]v68.1.0.52[/COLOR][/I][CR]- Delegated Player Process Info and playback codec badges to signde PPI[CR]- Added Profile 7 MEL/FEL media flags
+
+            [I][COLOR FFFF9800]v66.1.0.52[/COLOR][/I][CR]- Updated to upstream 1.0.52
+
+            [I][COLOR FFFF9800]v66.1.0.51[/COLOR][/I][CR]- Improved DTS:X media flag and label detection
+
+            [I][COLOR FFFF9800]v65.1.0.51[/COLOR][/I][CR]- Fixed Dolby Vision L5 active-area offsets in Player Process Info
+
+            [I][COLOR FFFF9800]v64.1.0.51[/COLOR][/I][CR]- Added source-quality media flags[CR]- Improved Atmos media matching
+
+            [I][COLOR FFFF9800]v63.1.0.51[/COLOR][/I][CR]- Fixes for Trakt compatibility
+
+            [I][COLOR FFFF9800]v62.1.0.51[/COLOR][/I][CR]- Fixed Atmos media badges in library views
+
+            [I][COLOR FFFF9800]v61.1.0.51[/COLOR][/I][CR]- Restored p3i support on Kodi Omega[CR]- Minor PPI fixes
+        </news>
     </extension>
 </addon>
