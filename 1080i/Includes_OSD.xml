@@ -384,9 +384,9 @@
                             <left>40</left>
                             <width>975</width>
                             <aligny>top</aligny>
-                            <textcolor>$VAR[ColorHighlight]</textcolor>
+                            <textcolor>ffededed</textcolor>
                             <selectedcolor>ffededed</selectedcolor>
-                            <label>$INFO[VideoPlayer.Genre,[COLOR=main_fg_100],[/COLOR]]$INFO[VideoPlayer.Year,  |  [COLOR=main_fg_100],[/COLOR]]</label>
+                            <label>$INFO[VideoPlayer.Genre]</label>
                             <visible>String.IsEmpty(VideoPlayer.EpisodeName)</visible>
                         </control>
                         <control type="label">
@@ -663,6 +663,7 @@
                 <top>750</top>
                 <texture>common/osd-dim.png</texture>
             </control>
+			
 
             <control type="group" description="info">
                 <left>view_pad</left>
@@ -1326,6 +1327,37 @@
             <onclick>ActivateWindow(musicplaylist)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
         </control>
+		
+        <control type="button" id="414">
+            <centertop>50%</centertop>
+            <description>Playerprocessinfo</description>
+            <width>52</width>
+            <height>52</height>
+            <label/>
+            <font/>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]">signde/ppi.png</texturefocus>
+            <texturenofocus colordiffuse="panel_fg_70">signde/ppi.png</texturenofocus>
+            <onclick>RunScript(script.signde.tinyppi)</onclick>
+            <visible>!Skin.HasSetting(HidePlayerInfoButton)</visible>
+            <visible>Window.IsVisible(videoosd)</visible>
+            <visible>!VideoPlayer.Content(LiveTV)</visible>
+        </control>
+		
+        <control type="button" id="415">
+            <centertop>50%</centertop>
+            <description>vs10</description>
+            <width>52</width>
+            <height>52</height>
+            <label/>
+            <font/>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]">signde/vs10.png</texturefocus>
+            <texturenofocus colordiffuse="panel_fg_70">signde/vs10.png</texturenofocus>
+            <onclick>RunScript(script.signde.tinyppi,dialog)</onclick>
+            <visible>!Skin.HasSetting(HidePlayerInfoButton)</visible>
+            <visible>Window.IsVisible(videoosd)</visible>
+            <visible>!VideoPlayer.Content(LiveTV)</visible>
+        </control>
+		
         <control type="button" id="25">
             <centertop>50%</centertop>
             <description>Settings</description>
@@ -1353,19 +1385,7 @@
             <visible>!Skin.HasSetting(HideBookmarksButton)</visible>
             <visible>!Window.IsVisible(musicosd)</visible>
         </control>
-        <control type="button" id="414">
-            <centertop>50%</centertop>
-            <description>Playerprocessinfo</description>
-            <width>48</width>
-            <height>48</height>
-            <label/>
-            <font/>
-            <texturefocus colordiffuse="$VAR[ColorHighlight]">DefaultAddonScreensaver.png</texturefocus>
-            <texturenofocus colordiffuse="panel_fg_70">DefaultAddonScreensaver.png</texturenofocus>
-            <onclick>ActivateWindow(playerprocessinfo)</onclick>
-            <visible>!Skin.HasSetting(HidePlayerInfoButton)</visible>
-            <visible>Window.IsVisible(videoosd)</visible>
-        </control>
+
         <control type="button" id="40">
             <centertop>50%</centertop>
             <description>Settings</description>
@@ -1640,7 +1660,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">DefaultAddonScreensaver.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">DefaultAddonScreensaver.png</texturenofocus>
             <include>OSD_Button_OnFocus</include>
-            <onclick>ActivateWindow(playerprocessinfo)</onclick>
+            <onclick>RunScript(script.signde.tinyppi)</onclick>
             <visible>!Skin.HasSetting(HidePlayerInfoButton)</visible>
             <visible>VideoPlayer.Content(LiveTV)</visible>
         </control>
